@@ -96,40 +96,35 @@ nav ul li a:hover::after {
     background-color: black;
 }
 
-.profile-pic {  
+
+.profile-pic {
     position: relative; 
-    display: inline-block;  
-}  
-
-.border-animation {  
-    position: absolute;  
-    top: 0;  
-    left: 0;  
-    width: 280px; 
-    height: 375px;  
-    border-radius: 50% / 40%;
-    transform: scaleX(1.5);
-    background: transparent; 
-    border: 3px solid;  
-    border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1; 
-    animation: rotate-border 6s linear infinite; 
-    z-index: 1;  
-}  
-
-@keyframes rotate-border {  
-    from {  
-        transform: rotate(0deg);  
-    }  
-    to {  
-        transform: rotate(360deg);  
-    }  
+    display: inline-block;
+    border-radius: 50%;
+    padding: 3px; 
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    animation: glow-border 3s ease-in-out infinite;
 }
+
 .profile-pic img {  
     width: 280px;  
     height: 375px;  
     border-radius: 50%;  
-    margin-right: 100px;  
-    background-color: white;  
+    background-color: white;
+    display: block; 
+}
+
+
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    }
 }
 @keyframes fade-in {  
     from {  
@@ -221,4 +216,107 @@ nav ul li a:hover::after {
 
 .spacer{
     height: 100px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: black; 
+        z-index: 1000;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        left: 0;
+        margin-left: 0;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: white;
+        text-align: left;
+    }
+
+    .header-line {
+        top: auto;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    #home {
+        flex-direction: column;
+        padding: 160px 20px 40px; /* Adjust for fixed header */
+        gap: 20px;
+    }
+.profile-pic{
+    margin-top: 60px;
+}
+    .profile-pic img {
+        width: 200px;
+        height: 250px;
+    }
+
+    .intro {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro h1 {
+        font-size: 1.8em;
+    }
+
+    .intro h2 {
+        font-size: 1.5em;
+    }
+
+    .intro h3 {
+        font-size: 1.2em;
+    }
+
+    .intro h4 {
+        font-size: 1em;
+    }
+
+    .intro p {
+        font-size: 0.95em;
+    }
+
+    .social-icons img {
+        width: 24px;
+        margin-right: 8px;
+    }
+
+    .buttons button {
+        margin-right: 0;
+        width: 100%;
+    }
 }

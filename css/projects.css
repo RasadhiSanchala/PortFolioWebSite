@@ -1,155 +1,232 @@
 #projects {
-   
     background-color: #ffffff;
 }
-#projects h2{
+
+#projects h2 {
     margin-left: 40px;
     margin-top: 50px;
     text-align: left;
     color: black;
     font-size: 2.8em;
 }
-.project-container1 {  
-    display: flex;  
-    align-items: center;  
-    justify-content: space-between;  
-    background-image: url(/images/blueBg.jpg);  
-    background-size: cover; 
-    background-position: center;  
-    background-repeat: no-repeat;  
-    padding: 20px;  
-    border-radius: 10px;  
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 3);  
-    width: 93%; 
-    height: 400px; 
-    margin-left: 35px; 
+
+.project-filter-nav {
+    text-align: center;
     margin-bottom: 30px;
-}  
-.project-container2 {  
-    display: flex;  
-    align-items: center;  
-    justify-content: space-between;  
-    background-image: url(/images/pinkBg.jpg);  
-    background-size: cover;  
-    background-position: center; 
-    background-repeat: no-repeat; 
-    padding: 20px;  
-    border-radius: 10px;  
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 3);  
-    width: 93%; 
-    height: 400px; 
-    margin-left: 35px; 
-    margin-bottom: 30px;
-}  
-.project-container3 {  
-    display: flex;  
-    align-items: center;  
-    justify-content: space-between;  
-    background-image: url(/images/pupleBg.png);  
-    background-size: cover;  
-    background-position: center; 
-    background-repeat: no-repeat;  
-    padding: 20px;  
-    border-radius: 10px;  
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 3);  
-    width: 93%;
-    height: 400px; 
-    margin-left: 35px; 
-    margin-bottom: 30px;
-}  
-.project-card {
-    max-width: 90%;
-    margin-top: 5px;
-    
 }
 
-.project-card h3{
-    margin-bottom: 10px;
-    margin-top: 15px;
-    color: black;
-    text-align:left;
-    margin-left: 30px;
-    font-size: 1.8em;
-}
-.project-card h4 ,.project-card p{
-    margin-bottom: 10px;
-    color: black;
-    text-align: left;
-    font-weight: bold;
-    margin-left: 30px;
-    margin-right: 40px;
-}
-.project-details {
-    background: rgb(255, 255, 255);
- font-size: 0.8em;
-    border-radius: 5px;
-    padding: 10px;
-    color: black;
-    text-align: left;
-}
- .contribution-details {
-    background: rgb(255, 255, 255);
-    font-size: 0.8em;
-    padding: 15px;
-    border-radius: 5px;
-    color: black;
-    text-align: left;
-}
-
-.project-image img {
-    width: 300px;
-   margin-right: 120px;
-    height: auto;
-    border-radius: 5px;
-
-    margin-top: 80px;
-    opacity: 0;
- 
-
-}
-.github-link {
-    cursor: pointer;
-    margin-top: 10px;
+.filter-btn {
+    background: black;
     color: white;
-    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
     border-radius: 5px;
-    align-items: flex-start;
+    transition: 0.3s ease;
 }
 
-@keyframes fadeIn {  
-    from {  
-        opacity: 0;  
-        transform: translateY(20px);  
-    }  
-    to {  
-        opacity: 1;  
-        transform: translateY(0); 
-    }  
-}  
+.filter-btn.active,
+.filter-btn:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
 
-.project-container1,  
-.project-container2,  
-.project-container3 {  
-    opacity: 0;  
-    transform: translateY(20px);  
-    animation: fadeIn 0.8s forwards; 
-    animation-delay: 0s;
-}  
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 20px 40px;
+}
 
-.project-container1:hover,  
-.project-container2:hover,  
-.project-container3:hover {  
-    transform: scale(1.05);   
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);  
-    transition: transform 0.3s ease, box-shadow 0.3s ease;  
-}  
- 
-.project-image img {  
-    transition: opacity 0.3s; 
-}  
+/* Each Card */
+.project-card {
+    width: calc(33.333% - 13.33px); /* 3 cards per row considering 20px gap */
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* animate scale & shadow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transform: scale(1);
+}
 
-.project-container1:hover .project-image img,  
-.project-container2:hover .project-image img,  
-.project-container3:hover .project-image img {  
-    opacity: 1; 
+/* Hover effect for cards */
+.project-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Top image part */
+.project-top {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-top:hover .overlay {
+    opacity: 1;
+}
+
+/* Bottom details */
+.project-bottom {
+    padding: 10px;
+}
+
+.project-bottom p {
+    margin-bottom: 30px;
+    color: black;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.project-bottom a {
+    display: inline-block;
+    text-decoration: none;       /* No underline */
+    color: #007BFF;              /* Text color (blue) */
+    font-weight: bold;
+    border: 2px solid #007BFF;   /* Blue border */
+    padding: 10px 15px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 5px 0;
+    width: fit-content;
+}
+
+.project-bottom a:hover,
+.project-bottom a:active {
+    background-color: #007BFF;  /* Fill the background */
+    color: white;               /* White text when active */
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.project-bottom a:hover {
+    /* no underline even on hover */
+}
+
+.project-bottom h3 {
+    color: black;
+    text-align: left;
+    margin-left: 5px;
+}
+
+/* Filtering */
+.filter-item {
+    display: none;
+}
+
+.filter-item.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+/* Tech stack items */
+.tech-stack span {
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards; /* Animation */
+}
+
+/* Tech stack fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* On hover: slightly enlarge tech stack items */
+.tech-stack span:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0; /* Lighter background color */
+}
+
+/* ——— New Animations & Responsive Breakpoints ——— */
+
+/* Fade-in cards when they appear */
+.filter-item.show {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 1024px) {
+    .project-card {
+        width: calc(50% - 10px);
+    }
+    .project-grid {
+        justify-content: center;
+        padding: 20px 30px;
+    }
+}
+
+/* Mobile: 1 card per row, adjust heights */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+        height: auto;
+    }
+    #projects h2 {
+        font-size: 2em;
+    }
+    .filter-btn {
+        padding: 8px 15px;
+    }
+    .project-grid {
+        padding: 20px 20px;
+    }
 }
