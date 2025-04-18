@@ -132,3 +132,74 @@ h2 {
     object-position: center; 
     display: block; 
 }  
+
+@media (max-width: 768px) {
+    #about {
+        text-align: center;
+        font-size: 1.4em;
+        padding: 20px;
+    }
+
+    h2 {
+        margin: 20px 0;
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .para-set {
+        font-size: 0.9em;
+        text-align: justify;
+        margin: 0 20px 20px;
+        line-height: 1.6em;
+    }
+
+    .about-image {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .skill {
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .skills-section h2 {
+        text-align: center;
+        margin-left: 0;
+        font-size: 1.2em;
+    }
+
+    .skills-container2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+        background-size: cover;
+    }
+
+    .skill-box {
+        width: 80%;
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+
+    .skill-box h3 {
+        font-size: 1.1em;
+    }
+
+    .skill-box p {
+        font-size: 0.95em;
+    }
+
+    .icon-set img {
+        width: 100%;
+        height: auto;
+    }
+}

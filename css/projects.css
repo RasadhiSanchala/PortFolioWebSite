@@ -203,30 +203,48 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Tablet: 2 cards per row */
-@media (max-width: 1024px) {
-    .project-card {
-        width: calc(50% - 10px);
-    }
-    .project-grid {
-        justify-content: center;
-        padding: 20px 30px;
-    }
-}
-
-/* Mobile: 1 card per row, adjust heights */
 @media (max-width: 768px) {
     .project-card {
         width: 100%;
         height: auto;
     }
+
     #projects h2 {
         font-size: 2em;
+        margin-left: 20px;
+        margin-top: 30px;
     }
+
     .filter-btn {
         padding: 8px 15px;
+        font-size: 0.9em;
     }
+
     .project-grid {
-        padding: 20px 20px;
+        padding: 15px 15px;
+        gap: 15px;
+    }
+
+    .project-bottom p,
+    .project-bottom h3 {
+        font-size: 0.95em;
+    }
+
+    .project-bottom a {
+        font-size: 0.75em;
+        padding: 8px 12px;
+    }
+
+    .tech-stack {
+        gap: 8px;
+    }
+
+    .tech-stack span {
+        font-size: 0.75em;
+        padding: 4px 8px;
+    }
+
+    .overlay {
+        font-size: 1.2rem;
     }
 }
