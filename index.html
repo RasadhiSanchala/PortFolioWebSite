@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/projects.css">
     <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
             </div>
             <div class="buttons">
                 <a href="#contact-section"><button>CONTACT ME</button></a>
-                <a href="https://drive.google.com/uc?export=download&id=1d7J7WT1wUp7a243ZnUwciDqH_Uf1RJ_y"
+                <a href="https://drive.google.com/uc?export=download&id=1fjv6AauWuo-cTJ3E5B96q6aE7p1ludGT"
                     target="_blank">
                     <button>DOWNLOAD CV</button>
                 </a>
@@ -446,35 +447,78 @@
     </section>
 
     <!-- This is my contact section -->
-
     <section id="contact-section">
-        <h2>CONTACT ME</h2>
-        <div class="description-section">
-            <div class="contact-info">
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/sanchala-o-p-r/" target="_blank"><img
-                            src="/SENG31313-2025/se21021/images/linked.png" alt=""></a>
-                    <a href="mailto:rasadhi1017@gmail.com" target="_blank"><img
-                            src="/SENG31313-2025/se21021/images/email (2).png" alt=""></a>
-                    <a href="https://facebook.com"><img src="/SENG31313-2025/se21021/images/fb.png" alt=""></a>
-                    <a href="https://github.com/RasadhiSanchala" target="_blank"><img
-                            src="/SENG31313-2025/se21021/images/git.png" alt=""></a>
+        <div class="contact-wrapper">
+            <div class="contact-left">
+                <p class="get-in-touch-label">— GET IN TOUCH</p>
+                <h2 class="contact-heading">Let's Build<br><span>Something<br>Together</span></h2>
+                <p class="contact-tagline">Whether you have an exciting project, a collaboration idea, or just want to chat — my inbox is always open.</p>
+                <div class="contact-cards">
+                    <a href="https://github.com/RasadhiSanchala" target="_blank" class="contact-card">
+                        <span class="card-icon github-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <div class="card-text">
+                            <span class="card-label">GITHUB</span>
+                            <span class="card-value">github.com/RasadhiSanchala</span>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sanchala-o-p-r/" target="_blank" class="contact-card">
+                        <span class="card-icon linkedin-icon">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <div class="card-text">
+                            <span class="card-label">LINKEDIN</span>
+                            <span class="card-value">linkedin.com/in/sanchala-o-p-r</span>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="mailto:rasadhi1017@gmail.com" class="contact-card">
+                        <span class="card-icon email-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </span>
+                        <div class="card-text">
+                            <span class="card-label">EMAIL</span>
+                            <span class="card-value">rasadhi1017@gmail.com</span>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </a>
                 </div>
-                <div class="para-control">
-                    <p>Feel free to reach out anytime.</p>
-                    <p>I'm always excited to discuss new projects and opportunities.</p>
-                </div>
+            </div>
+            <div class="contact-right">
+                <h3>Send a Message</h3>
+                <form id="contact-form" onsubmit="sendEmail(event)">
+                    <div class="form-group">
+                        <label for="user_name">Your Name</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="Alex Johnson" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Email Address</label>
+                        <input type="email" id="user_email" name="user_email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="I'd love to collaborate on..." required></textarea>
+                    </div>
+                    <button type="submit" class="send-btn" id="send-btn">
+                        <span id="btn-text">✈ Send Message</span>
+                        <span id="btn-loader" style="display:none;">Sending...</span>
+                    </button>
+                    <p id="form-status" class="form-status"></p>
+                </form>
             </div>
         </div>
     </section>
-
 
     <footer>
         <p>© 2025 Rasadhi Sanchala. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/javaScript/home.js"></script>
     <script src="/javaScript/project.js"></script>
+    <script src="/javaScript/contact.js"></script>
 </body>
 
 </html>
