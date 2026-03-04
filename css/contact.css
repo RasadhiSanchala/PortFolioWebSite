@@ -1,99 +1,298 @@
-#contact-section {  
-    background-color: white;  
-    border-radius: 10px;  
-}  
-
-.description-section {  
-    display: flex;  
-    padding: 30px;  
-    height: 400px; 
-    background-image: url(/images/contactBg.png);  
-    background-position: center bottom; 
-    background-repeat: no-repeat;  
-}  
-
-.contact-info {  
-    flex: 1; 
-    display: flex;  
-    flex-direction: column;  
-}  
-
-#contact-section h2 {  
-    text-align: left; 
-    margin-left: 60px; 
-    color: black;  
-    font-size: 2.8em;  
-}  
-.para-control{
-    margin-top: 250px;
+/* ─── Contact Section ─────────────────────────────────────────────── */
+#contact-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #111827 100%);
+    padding: 100px 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-section p {  
-    color: rgb(0, 0, 0);  
-    font-weight: bold;   
-}  
+#contact-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
 
-.social-links {  
-    display: flex;  
-    justify-content: center; 
-    align-items: center; 
-    margin-bottom: 10px;  
-}  
+.contact-wrapper {
+    display: flex;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
 
-.social-links img {  
-    width: 30px; 
-    margin: 0 10px; 
-}   
+/* ─── Left Column ─────────────────────────────────────────────────── */
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
 
-.social-links img {  
-    width: 30px;   
-    margin-right: 10px;  
+.get-in-touch-label {
+    font-size: 0.82em;
+    font-weight: 700;
+    color: #00ff88;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.contact-heading {
+    font-size: 3em;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.contact-heading span {
+    color: #00ff88;
+}
+
+.contact-tagline {
+    color: #9ca3af;
+    font-size: 0.97em;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    text-align: left;
+    max-width: 380px;
+}
+
+/* ─── Contact Cards ───────────────────────────────────────────────── */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-decoration: none;
+    transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.contact-card:hover {
+    background: rgba(0, 255, 136, 0.07);
+    border-color: rgba(0, 255, 136, 0.3);
+    transform: translateX(4px);
+}
+
+.card-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-icon i {
+    font-size: 1.15em;
+}
+
+.github-icon   { background: rgba(255, 255, 255, 0.1); }
+.github-icon i { color: #ffffff; }
+
+.linkedin-icon   { background: rgba(0, 119, 181, 0.2); }
+.linkedin-icon i { color: #0a66c2; }
+
+.email-icon   { background: rgba(234, 67, 53, 0.15); }
+.email-icon i { color: #ea4335; }
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    text-align: left;
+}
+
+.card-label {
+    font-size: 0.7em;
+    font-weight: 700;
+    color: #6b7280;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.card-value {
+    font-size: 0.9em;
+    color: #d1d5db;
+    font-weight: 500;
+}
+
+.card-arrow {
+    color: #4b5563;
+    font-size: 1.1em;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.contact-card:hover .card-arrow {
+    color: #00ff88;
+    transform: translateX(4px);
+}
+
+/* ─── Right Column (Form Card) ────────────────────────────────────── */
+.contact-right {
+    flex: 0.85;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 50px 40px;
+    min-height: 560px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.contact-right h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+/* ─── Form Groups ─────────────────────────────────────────────────── */
+.form-group {
     margin-bottom: 20px;
-}  
-
-footer{
-    color: white;
-    background-color: black;
-    padding: 10px;
+    text-align: left;
 }
 
-@media (max-width: 768px) {
-    #contact-section h2 {
-        font-size: 2.2em;
-        margin-left: 20px;
+.form-group label {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #6b7280;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 13px 15px;
+    color: #f9fafb;
+    font-size: 0.95em;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    outline: none;
+    box-sizing: border-box;
+    resize: vertical;
+    text-align: left;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #4b5563;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.04);
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.12);
+}
+
+/* ─── Submit Button ───────────────────────────────────────────────── */
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #00ff88, #00aaff);
+    color: #0a0a0a;
+    font-size: 1em;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: opacity 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 6px;
+    box-shadow: 0 6px 24px rgba(0, 255, 136, 0.25);
+}
+
+.send-btn:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.35);
+}
+
+.send-btn:active:not(:disabled) { transform: translateY(0); }
+.send-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ─── Status Messages ─────────────────────────────────────────────── */
+.form-status {
+    margin-top: 14px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    min-height: 20px;
+}
+
+.form-status.success { color: #00ff88; }
+.form-status.error   { color: #ff6b6b; }
+
+/* ─── Footer ──────────────────────────────────────────────────────── */
+footer {
+    color: #6b7280;
+    background-color: #050505;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    #contact-section {
+        padding: 70px 30px;
     }
 
-    .description-section {
+    .contact-wrapper {
         flex-direction: column;
-        height: auto;
-        padding: 20px;
-        background-size: cover;
-        background-position: center center;
+        gap: 50px;
     }
 
-    .contact-info {
-        text-align: center;
-        margin-bottom: 140px;
-        color: rgb(0, 0, 0);
+    .contact-heading {
+        font-size: 2.4em;
     }
 
-    .para-control {
-        margin-top: 20px;
-        text-align: center;
+    .contact-right {
+        padding: 34px 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-section {
+        padding: 60px 18px;
     }
 
-    .social-links {
-        justify-content: center;
-        margin-top: 20px;
+    .contact-heading {
+        font-size: 2em;
     }
 
-    .social-links img {
-        width: 40px;
-        margin: 10px;
-    }
-
-    footer {
-        text-align: center;
-        padding: 15px;
+    .contact-right {
+        padding: 28px 20px;
     }
 }
