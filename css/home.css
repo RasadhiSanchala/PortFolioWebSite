@@ -214,6 +214,19 @@ nav ul li a:hover::after {
     color: black;
 }
 
+.spnav ul li a:hover {  
+    color: rgb(255, 255, 255); 
+}  
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    margin-right: 20px;
+    z-index: 1001;
+}
+
 .spacer{
     height: 100px;
 }
@@ -221,48 +234,66 @@ nav ul li a:hover::after {
 
 @media (max-width: 768px) {
     header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-        margin-bottom: 10px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: black; 
-        z-index: 1000;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
     }
 
-    .logo {
-        margin-bottom: 10px;
-        left: 0;
-        margin-left: 0;
+    .hamburger {
+        display: block;
     }
 
     nav {
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        padding-top: 80px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.active {
+        right: 0;
     }
 
     nav ul {
-        display: flex;
         flex-direction: column;
-        gap: 10px;
-        padding-left: 0;
-        margin: 0;
-        width: 100%;
+        gap: 0;
+        margin-right: 0;
     }
 
     nav ul li {
         width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     nav ul li a {
         display: block;
-        width: 100%;
-        padding: 10px 0;
-        color: white;
+        padding: 20px 30px;
+        font-size: 1.1em;
+        letter-spacing: 1px;
         text-align: left;
+    }
+
+    nav ul li a:hover {
+        background: rgba(139, 92, 246, 0.1);
+        color: #a78bfa;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        left: 0;
+        margin-left: 0;
+    }
+
+    .logo img {
+        margin-left: 0;
     }
 
     .header-line {
@@ -273,8 +304,8 @@ nav ul li a:hover::after {
 
     #home {
         flex-direction: column;
-        padding: 160px 20px 40px; /* Adjust for fixed header */
-        gap: 20px;
+        padding: 120px 20px 40px;
+        gap: 30px;
     }
 .profile-pic{
     margin-top: 60px;
