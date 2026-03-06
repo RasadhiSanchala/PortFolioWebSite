@@ -110,8 +110,14 @@ nav ul li a:hover::after {
     display: block; 
     margin-top: -240px; /* Adjusted to move head and chest higher */
     margin-left: -80px;
-    image-rendering: -webkit-optimize-contrast; 
-    filter: contrast(1.25) brightness(0.85) saturate(1.1) drop-shadow(0 0 10px rgba(0,0,0,0.5)); 
+    image-rendering: -webkit-optimize-contrast; /* Sharper edges */
+    image-rendering: crisp-edges;
+    filter: contrast(1.3) brightness(0.9) saturate(1.15) drop-shadow(0 0 15px rgba(0,0,0,0.6)); 
+    transition: filter 0.3s ease;
+}
+
+.profile-pic img:hover {
+    filter: contrast(1.4) brightness(0.95) saturate(1.2) drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
 }
 
 
