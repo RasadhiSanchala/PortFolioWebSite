@@ -100,7 +100,7 @@ nav ul li a:hover::after {
 .profile-pic {
     position: relative; 
     display: inline-block;
-    height: 450px; /* Reduced height to crop lower body at chest level */
+    height: 400px; /* Further reduced height to crop the bottom part */
     overflow: hidden;
 }
 
