@@ -149,10 +149,12 @@ nav ul li a:hover::after {
     display: flex;  
     flex-direction: column;  
     align-items: flex-start; 
-    justify-content: center;  
+    justify-content: space-between; /* Vertical distribution */
     text-align: left; 
+    height: 420px; /* Matching the profile-pic container height */
     max-width: 600px;  
     margin-left: 50px;   
+    margin-top: 40px; /* Shifting the entire content block down */
 }  
 
 .intro h1,   
@@ -171,7 +173,7 @@ nav ul li a:hover::after {
 .intro h1 {  
     font-size: 2.5em;  
     font-weight: bold;  
-    margin-top: 5px;  
+    margin-top: 0; /* Removed manual margin to allow flex distribution */
     margin-bottom: 5px;  
     animation-delay: 1.0s;   
 }  
