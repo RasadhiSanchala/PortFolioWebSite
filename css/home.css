@@ -37,8 +37,8 @@ header {
 nav ul {  
     list-style: none;  
     display: flex;  
-    gap: 90px;  
-    margin-right: 75px;  
+    gap: 35px;  
+    margin-right: 50px;  
     padding: 0;  
 }  
 

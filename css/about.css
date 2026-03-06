@@ -3,7 +3,9 @@
     background: linear-gradient(180deg, #111827 0%, #0d0d0d 100%);
 }
 
-#about > h2 {
+#about > h2,
+#education > h2,
+#experience > h2 {
     text-align: center;
     color: #ffffff;
     font-size: 2.6em;
@@ -13,7 +15,9 @@
     margin: 0;
 }
 
-#about > h2::after {
+#about > h2::after,
+#education > h2::after,
+#experience > h2::after {
     content: "";
     display: block;
     width: 60px;
@@ -21,6 +25,11 @@
     background: linear-gradient(90deg, #8b5cf6, #f59e0b);
     border-radius: 2px;
     margin: 12px auto 0;
+}
+
+#education, #experience {
+    background: linear-gradient(180deg, #111827 0%, #0d0d0d 100%);
+    padding-bottom: 20px;
 }
 
 /* ─── About Content ───────────────────────────────────────────────── */
@@ -260,4 +269,133 @@
     .skills-section h2   { font-size: 1.9em; }
     .skills-section      { padding: 50px 18px 50px; }
     .skill-card          { padding: 24px 20px; }
+}
+
+/* ─── Education & Experience Section ──────────────────────────────── */
+.edu-exp-section {
+    padding: 0 80px 40px;
+    background: transparent;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hidden-title {
+    display: none;
+}
+
+.edu-exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.section-sub-heading {
+    text-align: left;
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin: 0 0 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-left: 4px solid #8b5cf6;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    text-align: left;
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.timeline-header {
+    margin-bottom: 15px;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+.timeline-header h4 {
+    color: #f9fafb;
+    font-size: 1.25em;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.timeline-header h5 {
+    color: #a78bfa;
+    font-size: 0.95em;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.timeline-body p {
+    color: #9ca3af;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.timeline-body p strong {
+    color: #e5e7eb;
+    font-weight: 600;
+}
+
+.timeline-list {
+    margin: 15px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.timeline-list li {
+    color: #9ca3af;
+    font-size: 0.9em;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    position: relative;
+    list-style-type: none;
+    text-align: left;
+}
+
+.timeline-list li::before {
+    content: "▹";
+    position: absolute;
+    left: -20px;
+    color: #8b5cf6;
+    font-size: 1.1em;
+}
+
+@media (max-width: 900px) {
+    .edu-exp-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .edu-exp-section {
+        padding: 0 30px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-exp-section {
+        padding: 0 18px 30px;
+    }
 }
