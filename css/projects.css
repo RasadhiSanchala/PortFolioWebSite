@@ -1,74 +1,104 @@
+/* ─── Projects Section ────────────────────────────────────────────── */
 #projects {
-    background-color: #ffffff;
+    background: linear-gradient(180deg, #0d0d0d 0%, #111827 100%);
+    padding: 80px 60px 100px;
+    position: relative;
 }
 
 #projects h2 {
-    margin-left: 40px;
-    margin-top: 50px;
-    text-align: left;
-    color: black;
-    font-size: 2.8em;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.6em;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    position: relative;
 }
 
+#projects h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5cf6, #f59e0b);
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+
+/* ─── Filter Navigation ───────────────────────────────────────────── */
 .project-filter-nav {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 36px 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .filter-btn {
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    margin: 5px;
-    font-weight: bold;
+    background: transparent;
+    color: #9ca3af;
+    padding: 9px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-weight: 600;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s ease;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+    font-family: inherit;
 }
 
-.filter-btn.active,
 .filter-btn:hover {
-    background: white;
-    color: black;
-    border: 1px solid black;
+    border-color: #a78bfa;
+    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.08);
 }
 
-/* Project Grid */
+.filter-btn.active {
+    background: linear-gradient(90deg, #8b5cf6, #f59e0b);
+    color: #ffffff;
+    border-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+/* ─── Project Grid ────────────────────────────────────────────────── */
 .project-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
     justify-content: flex-start;
-    padding: 20px 40px;
+    padding: 0 10px;
+    max-width: 1260px;
+    margin: 0 auto;
 }
 
-/* Each Card */
+/* ─── Each Card ───────────────────────────────────────────────────── */
 .project-card {
-    width: calc(33.333% - 13.33px); /* 3 cards per row considering 20px gap */
-    height: 500px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    width: calc(33.333% - 16px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* animate scale & shadow */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    transform: scale(1);
 }
 
-/* Hover effect for cards */
 .project-card:hover {
-    transform: scale(1.05); /* Slight zoom */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 92, 246, 0.4);
+    border-color: rgba(139, 92, 246, 0.35);
 }
 
-/* Top image part */
+/* ─── Image / Top ─────────────────────────────────────────────────── */
 .project-top {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 190px;
     overflow: hidden;
 }
 
@@ -76,20 +106,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
 }
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.88), rgba(245, 158, 11, 0.75));
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -98,52 +132,88 @@
     opacity: 1;
 }
 
-/* Bottom details */
+/* ─── Card Bottom ─────────────────────────────────────────────────── */
 .project-bottom {
-    padding: 10px;
-}
-
-.project-bottom p {
-    margin-bottom: 30px;
-    color: black;
-    text-align: left;
-    margin-left: 5px;
-}
-
-.project-bottom a {
-    display: inline-block;
-    text-decoration: none;       /* No underline */
-    color: #007BFF;              /* Text color (blue) */
-    font-weight: bold;
-    border: 2px solid #007BFF;   /* Blue border */
-    padding: 10px 15px;
-    font-size: 0.8em;
-    border-radius: 5px;
-    background-color: transparent;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin: 5px 0;
-    width: fit-content;
-}
-
-.project-bottom a:hover,
-.project-bottom a:active {
-    background-color: #007BFF;  /* Fill the background */
-    color: white;               /* White text when active */
-    cursor: pointer;
-    text-decoration: none !important;
-}
-
-.project-bottom a:hover {
-    /* no underline even on hover */
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-bottom h3 {
-    color: black;
+    color: #f9fafb;
+    font-size: 1.05em;
+    font-weight: 700;
+    margin: 0 0 10px;
     text-align: left;
-    margin-left: 5px;
 }
 
-/* Filtering */
+.project-bottom p {
+    color: #9ca3af;
+    font-size: 0.88em;
+    line-height: 1.7;
+    text-align: left;
+    margin: 0 0 14px;
+    flex: 1;
+}
+
+/* ─── Tech Stack Tags ─────────────────────────────────────────────── */
+.tech-stack {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 16px;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    background: rgba(139, 92, 246, 0.1);
+    color: #a78bfa;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.tech-stack span:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ─── GitHub / Figma Link Button ──────────────────────────────────── */
+.project-bottom a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.82em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+    letter-spacing: 0.03em;
+}
+
+.project-bottom a::before {
+    content: "↗";
+    font-size: 0.9em;
+}
+
+.project-bottom a:hover {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.45);
+    color: #f59e0b;
+    transform: translateX(3px);
+}
+
+/* ─── Filter Visibility ───────────────────────────────────────────── */
 .filter-item {
     display: none;
 }
@@ -151,100 +221,57 @@
 .filter-item.show {
     display: flex;
     flex-direction: column;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-.tech-stack {
-    display: flex;
-    gap: 10px;
-    margin: 10px 0;
-    flex-wrap: wrap;
-}
-
-/* Tech stack items */
-.tech-stack span {
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 0.8em;
-    font-weight: 500;
-    border: 1px solid #ccc;
-    opacity: 0;
-    animation: fadeInUp 0.5s ease-in-out forwards; /* Animation */
-}
-
-/* Tech stack fade-in animation */
+/* ─── Animations ──────────────────────────────────────────────────── */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* On hover: slightly enlarge tech stack items */
-.tech-stack span:hover {
-    transform: scale(1.1);
-    background-color: #e0e0e0; /* Lighter background color */
-}
-
-/* ——— New Animations & Responsive Breakpoints ——— */
-
-/* Fade-in cards when they appear */
-.filter-item.show {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
     .project-card {
-        width: 100%;
-        height: auto;
+        width: calc(50% - 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    #projects {
+        padding: 60px 24px 80px;
     }
 
     #projects h2 {
         font-size: 2em;
-        margin-left: 20px;
-        margin-top: 30px;
     }
 
-    .filter-btn {
-        padding: 8px 15px;
-        font-size: 0.9em;
+    .project-card {
+        width: 100%;
     }
 
     .project-grid {
-        padding: 15px 15px;
-        gap: 15px;
+        padding: 0;
+        gap: 20px;
     }
 
-    .project-bottom p,
-    .project-bottom h3 {
-        font-size: 0.95em;
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects {
+        padding: 50px 16px 70px;
     }
 
-    .project-bottom a {
-        font-size: 0.75em;
-        padding: 8px 12px;
-    }
-
-    .tech-stack {
-        gap: 8px;
-    }
-
-    .tech-stack span {
-        font-size: 0.75em;
-        padding: 4px 8px;
-    }
-
-    .overlay {
-        font-size: 1.2rem;
+    .project-top {
+        height: 160px;
     }
 }
