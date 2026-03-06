@@ -88,11 +88,12 @@ nav ul li a:hover::after {
 
 #home {
     display: flex;
+    flex-direction: row-reverse; /* Move image to the right of the text */
     align-items: center;
     margin-top: 40px;
-    justify-content: flex-start;
-    gap: 80px;
-    padding: 70px 10% 70px 5%;
+    justify-content: center;
+    gap: 40px; /* Reduced gap for a tighter, more professional look */
+    padding: 60px 5%;
     background-color: black;
 }
 
@@ -100,17 +101,18 @@ nav ul li a:hover::after {
 .profile-pic {
     position: relative; 
     display: inline-block;
-    height: 400px; /* Further reduced height to crop the bottom part */
+    width: 480px; /* Wider container to ensure the silhouette has plenty of horizontal 'room' */
+    height: 420px; /* Optimized height for a great chest-level crop */
     overflow: hidden;
 }
 
 .profile-pic img {  
-    height: 700px; 
+    height: 720px; 
     width: auto;
     display: block; 
-    margin-top: -240px; /* Adjusted to move head and chest higher */
-    margin-left: -80px;
-    image-rendering: -webkit-optimize-contrast; /* Sharper edges */
+    margin-top: -240px; /* Positioned high for impact */
+    margin-left: -20px; /* Shifted so the entire silhouette is centered in its new container */
+    image-rendering: -webkit-optimize-contrast; 
     image-rendering: crisp-edges;
     filter: contrast(1.3) brightness(0.9) saturate(1.15) drop-shadow(0 0 15px rgba(0,0,0,0.6)); 
     transition: filter 0.3s ease;
