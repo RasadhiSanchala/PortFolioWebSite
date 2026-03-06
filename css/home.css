@@ -90,9 +90,9 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     margin-top: 40px;
-    justify-content: center;
-    gap: 30px;
-    padding: 70px;
+    justify-content: flex-start;
+    gap: 80px;
+    padding: 70px 10% 70px 5%;
     background-color: black;
 }
 
@@ -100,18 +100,18 @@ nav ul li a:hover::after {
 .profile-pic {
     position: relative; 
     display: inline-block;
-    border-radius: 50%;
-    padding: 3px; 
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    animation: glow-border 3s ease-in-out infinite;
+    height: 450px; /* Reduced height to crop lower body at chest level */
+    overflow: hidden;
 }
 
 .profile-pic img {  
-    width: 280px;  
-    height: 375px;  
-    border-radius: 50%;  
-    background-color: white;
+    height: 700px; 
+    width: auto;
     display: block; 
+    margin-top: -240px; /* Adjusted to move head and chest higher */
+    margin-left: -80px;
+    image-rendering: -webkit-optimize-contrast; 
+    filter: contrast(1.25) brightness(0.85) saturate(1.1) drop-shadow(0 0 10px rgba(0,0,0,0.5)); 
 }
 
 
@@ -309,10 +309,13 @@ nav ul li a:hover::after {
     }
 .profile-pic{
     margin-top: 60px;
+    height: auto;
+    overflow: visible;
 }
     .profile-pic img {
         width: 200px;
         height: 250px;
+        margin-top: 0;
     }
 
     .intro {
