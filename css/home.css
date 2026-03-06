@@ -84,6 +84,7 @@ nav ul li a:hover::after {
     top: 66px; /* Position below the header */  
     left: 0;  
     right: 0; 
+    z-index: 1000; /* Same level as header to stay on top of hero content */
 }
 
 #home {
