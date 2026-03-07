@@ -276,10 +276,9 @@ nav ul li a:hover::after {
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start; /* Left-aligned */
-        gap: 15px;
+        align-items: center;
+        gap: 20px;
         margin: 0;
-        padding-left: 40px; /* Space from the left edge */
     }
 
     nav ul li {
@@ -288,9 +287,9 @@ nav ul li a:hover::after {
     }
 
     nav ul li a {
-        font-size: 1.3rem;
-        padding: 5px 0;
-        text-align: left; /* Left-aligned */
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        text-align: center;
     }
 
     nav ul li a:hover {
